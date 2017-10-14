@@ -1,0 +1,13 @@
+libemlrt.lib
+libcovrt.lib
+libut.lib
+libmwmathutil.lib
+/export:mexFunction
+/export:emlrtMexFcnProperties
+/export:sumTest
+/export:emxEnsureCapacity
+/export:emxFree_real_T
+/export:emxInit_real_T
+/export:sumTest_initialize
+/export:sumTest_terminate
+/export:sumTest_atexit
