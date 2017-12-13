@@ -1,0 +1,418 @@
+#include "mex.h"
+#include <stdlib.h>
+#include <cstdlib>
+#include <Math.h>
+#include <stdio.h>
+
+#define xDim 500
+#define yDim 500
+#define zDim 3
+#define windowSize 20
+#define stepSize 10
+#define beacon  ceil((windowSize*windowSize) / 20) 
+
+//using namespace std;
+
+struct Region {
+	
+	int region; //region unattended to
+	int value; //default value
+	int xCoord; //default value
+	int yCoord; //default value
+
+	struct Region* left; //empty MapRegion object
+	struct Region* right; //empty MapRegion object
+	struct Region* top; //empty MapRegion object
+	struct Region* bottom; //empty MapRegion object
+
+
+public:
+	//initialize variables
+	Region() : region (-1), value(-1), xCoord(-1), yCoord(-1) {}
+};
+
+
+
+class MapRegion {
+
+public:
+	
+	MapRegion() {};
+	~MapRegion() {};
+	//int CCA(int **regionShedd);
+	//int getLocation(int x, int y, int width);
+};
+
+void CCAmex(int* inputArray, int* outputArray);
+int getLocation(int x, int y, int width);
+
+
+
+void CCAmex(int* inputArray, int* outputArray) {
+    
+	//Initialize aprameters and variables
+	int startX = 0; int startY = 0; int stopX = windowSize - 1; int stopY = windowSize - 1;
+	int xCounter = 0;
+	int yCounter = 0;
+	int regionSum = 0; //Sum of the number of Pixels which are potentialy members of the ROI
+
+    const int xBlocks = ((xDim - windowSize) / stepSize) + 1;
+	const int yBlocks = ((yDim - windowSize) / stepSize) + 1;
+	const int totalBlocks = xBlocks * yBlocks;
+	struct Region* Map[totalBlocks];
+    int **regionShedd = new int*[xDim];
+    
+    int* regionSizeTracker = (int*)calloc(totalBlocks, sizeof(int));
+	int* regionMap = (int*)calloc(totalBlocks, sizeof(int));
+	int regionCounter = 0;
+	int location = 0; int left = 0; int right = 0; int top = 0; int bottom = 0;
+
+	int myLeftNeighRegion = 0;
+	int myRightNeighRegion = 0;
+	int myTopNeighRegion = 0;
+	int myBottomNeighRegion = 0;
+    int cnt=0;
+  
+    int xCount = 0; int yCount = 0;
+    int oldestRegion = 0;
+    
+	for (int m=0; m<totalBlocks; m++) {
+		Map[m] = new Region(); //Initialize stuct
+	}
+    
+         //Get RegionShed in 2D
+        for (int i = 0; i < xDim; i++) {
+		regionShedd[i] = new int[xDim];
+		for (int j = 0; j < xDim; j++) {
+			regionShedd[i][j] = inputArray[cnt];
+            cnt++;  
+            }
+		}
+	
+    //Analysis loop
+	for ( int BlockLoop=0; BlockLoop<totalBlocks; BlockLoop++ ) {
+
+		regionSum = 0;
+		xCount = xCounter;
+		yCount = yCounter;
+		location = getLocation(xCount, yCount, xBlocks);
+		left = getLocation(xCount - 1, yCount, xBlocks);
+		right = getLocation(xCount + 1, yCount, xBlocks);
+		bottom = getLocation(xCount, yCount + 1, xBlocks);
+		top = getLocation(xCount, yCount - 1, xBlocks);
+
+		//Pixel Sum Pooling happens here 
+		for (int j = startX; j<=stopX; j++) {
+			for (int k = startY; k<=stopY; k++) {
+				regionSum = regionSum + regionShedd[j][k];
+			}
+		}
+	
+		//Save region's potential & Link Regions Together
+		regionMap[BlockLoop] = regionSum;
+	
+
+		Map[location]->value = regionSum;
+		Map[location]->xCoord = xCount;
+		Map[location]->yCoord = yCount;
+
+		if (xCount == 0 && yCount == 0) {
+			Map[location]->left = Map[location]; 
+			Map[location]->right = Map[right];
+			Map[location]->top = Map[location];
+			Map[location]->bottom = Map[bottom];
+		}
+		else if (xCount == xBlocks - 1 && yCount == 0) {
+			Map[location]->left = Map[left];
+			Map[location]->right = Map[location];
+			Map[location]->top = Map[location];
+			Map[location]->bottom = Map[bottom];
+		}
+		else if (xCount == 0 && yCount == yBlocks - 1) {
+			Map[location]->left = Map[location];
+			Map[location]->right = Map[right];
+			Map[location]->top = Map[top];
+			Map[location]->bottom = Map[location];
+		}
+		else if (xCount == xBlocks - 1 && yCount == yBlocks - 1) {
+			Map[location]->left = Map[left];
+			Map[location]->right = Map[location];
+			Map[location]->top = Map[top];
+			Map[location]->bottom = Map[location];
+		}
+		else if (xCount == 0) {
+			Map[location]->left = Map[location];
+			Map[location]->right = Map[right];
+			Map[location]->top = Map[top];
+			Map[location]->bottom = Map[bottom];
+		}
+		else if (xCount == xBlocks - 1) {
+			Map[location]->left = Map[left];
+			Map[location]->right = Map[location];
+			Map[location]->top = Map[top];
+			Map[location]->bottom = Map[bottom];
+		}
+		else if (yCount == 0) {
+			Map[location]->left = Map[left];
+			Map[location]->right = Map[right];
+			Map[location]->top = Map[location];
+			Map[location]->bottom = Map[bottom];
+		}
+		else if (yCount == yBlocks - 1) {
+			Map[location]->left = Map[left];
+			Map[location]->right = Map[right];
+			Map[location]->top = Map[top];
+			Map[location]->bottom = Map[location];
+		}
+		else {
+			Map[location]->left = Map[left];
+			Map[location]->right = Map[right];
+			Map[location]->top = Map[top];
+			Map[location]->bottom = Map[bottom];
+		}
+
+		//Check to see if current region is bright enough
+		if (Map[location]->value>beacon) { //i.e more than 1/4th of the region is white
+			//Check the regions its neighbours belong to
+			myLeftNeighRegion = Map[location]->left->region;
+			myRightNeighRegion = Map[location]->right->region;
+			myTopNeighRegion = Map[location]->top->region;
+			myBottomNeighRegion = Map[location]->bottom->region;
+			
+			//If any of its neighbours already belong to a region, select the region of the neigbour with the lowest value and force this one to join it
+			if (myLeftNeighRegion>-1 || myRightNeighRegion>-1 || myTopNeighRegion>-1 || myBottomNeighRegion>-1) {
+				//oldestRegion = NULL;
+				if (myLeftNeighRegion != -1) { oldestRegion = myLeftNeighRegion;}
+				else if (myRightNeighRegion != -1) { oldestRegion = myRightNeighRegion; }
+				else if (myTopNeighRegion != -1) { oldestRegion = myTopNeighRegion; }
+				else if (myBottomNeighRegion != -1) { oldestRegion = myBottomNeighRegion; }
+			    
+				if (myLeftNeighRegion != -1 && myLeftNeighRegion<oldestRegion) { oldestRegion = myLeftNeighRegion; }
+				if (myRightNeighRegion != -1 && myRightNeighRegion<oldestRegion) { oldestRegion = myRightNeighRegion; }
+				if (myTopNeighRegion != -1 &&  myTopNeighRegion<oldestRegion) { oldestRegion = myTopNeighRegion; }
+				if (myBottomNeighRegion != -1 && myBottomNeighRegion<oldestRegion) { oldestRegion = myBottomNeighRegion; }
+				
+				Map[location]->region = oldestRegion;
+				
+				regionSizeTracker[oldestRegion] = regionSizeTracker[oldestRegion] + 1;
+				
+				//Force other neigbours of this region that may be already part of another region to join the lower region
+				if (myLeftNeighRegion >-1 && myLeftNeighRegion != oldestRegion) {
+					regionSizeTracker[myLeftNeighRegion] = regionSizeTracker[myLeftNeighRegion] - 1; //Update region Size tracker
+					Map[location]->left->region = oldestRegion;
+					regionSizeTracker[oldestRegion] = regionSizeTracker[oldestRegion] + 1; //Update region Size tracker
+				}
+				if (myRightNeighRegion >-1 && myRightNeighRegion != oldestRegion) {
+					regionSizeTracker[myRightNeighRegion] = regionSizeTracker[myRightNeighRegion] - 1; //Update region Size tracker
+					Map[location]->right->region = oldestRegion;
+					regionSizeTracker[oldestRegion] = regionSizeTracker[oldestRegion] + 1;  //Update region Size tracker
+				}
+				if (myTopNeighRegion >-1 && myTopNeighRegion != oldestRegion) {
+					regionSizeTracker[myTopNeighRegion] = regionSizeTracker[myTopNeighRegion] - 1; //Update region Size tracker
+					Map[location]->top->region = oldestRegion;
+					regionSizeTracker[oldestRegion] = regionSizeTracker[oldestRegion] + 1;  //Update region Size tracker
+				}
+				if (myBottomNeighRegion >-1 && myBottomNeighRegion != oldestRegion) {
+					regionSizeTracker[myBottomNeighRegion] = regionSizeTracker[myBottomNeighRegion] - 1; //Update region Size tracker
+					Map[location]->bottom->region = oldestRegion;
+					regionSizeTracker[oldestRegion] = regionSizeTracker[oldestRegion] + 1;  //Update region Size tracker
+				}
+				
+			}
+			//If non of its neigbour already belongs to a region, then assign it a region
+			else {
+				Map[location]->region = regionCounter;
+				regionSizeTracker[regionCounter] = regionSizeTracker[regionCounter] + 1;
+				regionCounter = regionCounter + 1;
+			}//End of 'if any of its neighbours already....'
+			
+		}
+		
+		else {
+			//Do nothing	
+		}//End of 'check to see if current region is bright enough.....'
+
+		//Loop management 
+		if (yCounter == yBlocks - 1) {
+			//reset xStart, xStop positions and xCounter 
+			startY = 0;
+			stopY = windowSize - 1;
+			yCounter = -1;
+			xCounter = xCounter + 1;
+
+			startX = startX + stepSize;
+			stopX = startX + windowSize -1  ;
+		}
+		else {
+
+			startY = startY + stepSize;
+			stopY = startY + windowSize - 1;
+		}
+		
+		yCounter = yCounter + 1;
+	} //end of xBlockLoop 
+ 
+//memcpy(outputArray, regionSizeTracker, sizeof(int)*totalBlocks); //Copy region tracker to output
+
+//Get the region with the highest potential
+int max=regionSizeTracker[0];
+int maxPos=0;
+int temp=0;
+for (int ii=1; ii<totalBlocks; ii++){
+    temp  = regionSizeTracker[ii];
+    if(temp>=max){
+     max = temp;
+     maxPos=ii;
+    }
+}
+
+
+ //Get positions of edge indexs
+ int currentHighestX=-1; int currentLowestX=xDim+1; int currentHighestY=-1; int currentLowestY=yDim+1; int thisX=0; int thisY=0;
+ int xCnt=0; int yCnt=0;
+  for (int iii=0; iii<totalBlocks; iii++){
+  location = getLocation(xCnt, yCnt, xBlocks);
+     if (Map[location]->region==maxPos){
+        thisX = Map[location]->xCoord; 
+        thisY = Map[location]->yCoord;
+        
+        if (thisX>currentHighestX){currentHighestX = thisX;} 
+        else if (thisX<currentLowestX){currentLowestX = thisX;}
+        else{}
+        
+        if (thisY>currentHighestY){currentHighestY = thisY;} 
+        else if (thisY<currentLowestY){currentLowestY = thisY;}
+        else{}
+     }     
+     if (yCnt==yBlocks-1){
+        //reset xStart, xStop positions and xCounter 
+         yCnt=-1;
+         xCnt = xCnt+1; 
+     }
+           yCnt=yCnt+1;
+ }
+    
+   //Due to matlab array indexing, add 1 to all indexes
+	currentLowestX = currentLowestX + 1;
+	currentLowestY = currentLowestY + 1;
+	currentHighestX = currentHighestX + 1;
+	currentHighestY = currentHighestY + 1;
+    int ex = (currentLowestX*stepSize) - (stepSize - 1);
+	int wy = (currentLowestY*stepSize) - (stepSize - 1);
+	int height = (currentHighestX*stepSize) - (stepSize - 1) + (windowSize - 1) - ex;
+	int width = (currentHighestY*stepSize) - (stepSize - 1) + (windowSize - 1) - wy;
+    
+    
+    //x,y,width,height
+	//int* outputArray = (int*)calloc(4, sizeof(int));
+	outputArray[0] = ex;
+	outputArray[1] = wy;
+	outputArray[2] = height;
+	outputArray[3] = width;
+    
+    //Free created pointers
+   
+    //FOR--->>> struct Region* Map[totalBlocks];
+    for( int indx = 0; indx < totalBlocks; ++indx )
+    {
+    delete Map[indx];
+    }
+    delete [] Map;
+    //Only free() a pointer that 
+	//1. is NULL or 
+	//2. you obtained via a call to malloc(), calloc() or realloc()
+    
+   //FOR --->>> int **regionShedd = new int*[500];
+    for( int indx = 0; indx < xDim; ++indx )
+    {
+    free(regionShedd[indx]);
+    }
+    delete [] regionShedd;
+    
+    //FOR --->> int* regionSizeTracker = (int*)calloc(totalBlocks, sizeof(int));
+    free(regionSizeTracker);
+    
+    //FOR --->>> int* regionMap = (int*)calloc(totalBlocks, sizeof(int)); 
+	free(regionMap);
+
+return;
+} //End of function
+
+int getLocation(int x, int y, int width) {
+	return	(y + (width*x));
+}
+
+
+
+/* The gateway function */
+/*
+ * nlhs	 - Number of output (left-side) arguments, or the size of the plhs array.
+ * plhs	 - Array of output arguments.
+ * nrhs	 - Number of input (right-side) arguments, or the size of the prhs array.
+ * prhs	 - Array of input arguments.   
+ 
+ *CALL MEX FUNCTION THIS WAY IN MATLAB CODE
+transpose = img';
+img1D = transpose(:)'; //TURNING IMAGE TO 1D ARRAY
+[output] = CCAmex(uint32(img1D))
+ *GET OUTPUT THIS WAY
+x = output(1);
+y = output(2);
+width = output(3);
+height = output(4);
+ 
+ 
+ */
+
+void mexFunction( int nlhs, mxArray *plhs[],int nrhs, const mxArray *prhs[])
+{
+
+    int *inMatrix;               /* 1xN input matrix */
+    int *outMatrix;              /* output matrix */
+    int outputSize=4;
+    
+    const int xBlocks = ((xDim - windowSize) / stepSize) + 1;
+	const int yBlocks = ((yDim - windowSize) / stepSize) + 1;
+    const int totalBlocks = xBlocks * yBlocks;
+
+    /* To check that there is only one input argument i.e inMatrix */
+    if(nrhs!=1) {
+        mexErrMsgIdAndTxt("MyToolbox:arrayProduct:nrhs","One inputs required.");
+    }
+    /* To check that there is only one output argument i.e outMatrix */
+    if(nlhs!=1) {
+        mexErrMsgIdAndTxt("MyToolbox:arrayProduct:nlhs","One output required.");
+    }
+    
+    /* make sure the first input argument is not a scalar i.e it is a matrix */
+    if(mxGetNumberOfElements(prhs[0])<=1) {
+        mexErrMsgIdAndTxt("MyToolbox:arrayProduct:notScalar","Input multiplier must be a 1D matrix.");
+    }
+
+    /* make sure the first input argument is type double or uint8 */
+    if( !mxIsDouble(prhs[0]) && !mxIsUint8(prhs[0]) && !mxIsUint32) {
+        mexErrMsgIdAndTxt("MyToolbox:arrayProduct:notDouble","Input matrix must be type double or uint8.");
+    }
+    
+    /* check that number of rows in first input argument is 1 */
+    if(mxGetM(prhs[0])!=1) {
+        mexErrMsgIdAndTxt("MyToolbox:arrayProduct:notRowVector","Input must be a row vector.");
+    }
+    
+    /* create a pointer to the real data in the input matrix  */
+    inMatrix = (int32_T *) mxGetPr(prhs[0]);
+
+    /* create the output matrix */
+    plhs[0] = mxCreateNumericMatrix(1,(mwSize)outputSize,mxINT32_CLASS,mxREAL);
+
+    /* get a pointer to the real data in the output matrix */
+    outMatrix = (int32_T *) mxGetPr(plhs[0]);
+
+    /* call the computational routine */
+    CCAmex(inMatrix,outMatrix);
+    return;
+}
+
+
+
+

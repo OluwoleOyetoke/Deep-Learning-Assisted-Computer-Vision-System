@@ -1,0 +1,575 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Code Generation Report</title>
+<link rel="stylesheet" type="text/css" href="resources/eml_report.css" />
+<link rel="stylesheet" type="text/css" href="resources/jQuery/ui.resizable.css" />
+<link rel="stylesheet" type="text/css" href="index.css" />
+
+<script type="text/javascript" src="resources/jQuery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery-ui-1.7.custom.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.tablesorter.mod.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.hotkeys-0.7.8.js"></script>
+<script type="text/javascript" src="resources/eml_report_interactions.js"></script>
+<script type="text/javascript" src="resources/eml_report_layout.js"></script>
+<script type="text/javascript" src="rtwshrink.js"></script>
+<script type="text/javascript">
+var localizedMessages = {
+    callSelectPrompt: "Select a function call:",
+    callSelectSource: "Calls from this function",
+    callSelectTarget: "Calls to this function",
+    infoForExpression: "Information for the selected expression:",
+    infoForVarType: "Information for the selected variable:",
+    infoForVarConst: "Information for the selected compile-time constant:",
+    infoForVarNone: "This variable does not have information associated with it.",
+    infoForFilter: "Matched {0}/{1} functions, {2}/{3} methods",
+    autoExtrinsicCall: "Only supported within the MATLAB environment."
+};
+var keyBindings = {
+        selectMCodeTab: "Ctrl+m",
+    selectCallStackTab: "Ctrl+k",
+        selectCCodeTab: "Ctrl+c",
+       selectReportTab: "Ctrl+r",
+     selectCenterPanel: "Ctrl+w",
+      selectSummaryTab: "Ctrl+s",
+     selectMessagesTab: "Ctrl+a",
+    selectWatchListTab: "Ctrl+v",
+     selectBuildLogTab: "Ctrl+t"
+};
+var functionInfoTable = {
+ MATLABcode1: "detectCorner1_mcode.html",
+ fpath1: "C:/Users/Oluwole_Jnr/Desktop/University of Leeds/Main Project/Project_MATLab/MatConvNet - Optimized/detectCorner.m",
+ lines1: [1, 1, 76],
+ watch1: "detectCorner1_watch.html",
+ title1: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\Oluwole_Jnr\\Desktop\\University&nbsp;of&nbsp;Leeds\\Main&nbsp;Project\\Project_MATLab\\MatConvNet&nbsp;-&nbsp;Optimized\\detectCorner.m' class='functionlink' href=\"matlab: open('C:\\Users\\Oluwole_Jnr\\Desktop\\University of Leeds\\Main Project\\Project_MATLab\\MatConvNet - Optimized\\detectCorner.m')\">detectCorner</a></span>",
+ tcall1: [  ],
+ scall1: [  ],
+ rootFcnID: "1",
+ firstPage: "1",
+ htmlRoot: "C:/Users/Oluwole_Jnr/Desktop/University%20of%20Leeds/Main%20Project/Project_MATLab/MatConvNet%20-%20Optimized/codegen/mex/detectCorner/html/"
+};
+var scriptInfoTable = {
+ fpath1: "C:/Users/Oluwole_Jnr/Desktop/University of Leeds/Main Project/Project_MATLab/MatConvNet - Optimized/detectCorner.m",
+ fpath2: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/isBuiltInNumeric.m",
+ fpath3: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+scalar/floor.m",
+ fpath4: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/applyScalarFunctionInPlace.m",
+ fpath5: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elfun/floor.m",
+ fpath6: "C:/Program Files/MATLAB/R2016a/toolbox/shared/coder/coder/+coder/+internal/narginchk.m",
+ fpath7: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/conv2.m",
+ fpath8: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/prodsize.m",
+ fpath9: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/private/convshapestr2id.m",
+ fpath10: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/scalarEg.m",
+ fpath11: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/fixedpoint/isnumerictype.m",
+ fpath12: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/fixedpoint/isfimath.m",
+ fpath13: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/fixedpoint/isfi.m",
+ fpath14: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/intmax.m",
+ fpath15: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/intmin.m",
+ fpath16: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m",
+ fpath17: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/private/convn_kernel.m",
+ fpath18: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/indexDivide.m",
+ fpath19: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/indexPlus.m",
+ fpath20: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/indexMinus.m",
+ fpath21: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/indexTimes.m",
+ fpath22: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/private/convBlasThreshold.m",
+ fpath23: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/inline.m",
+ fpath24: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/use_refblas.m",
+ fpath25: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/threshold.m",
+ fpath26: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/xaxpy.m",
+ fpath27: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/isaUint.m",
+ fpath28: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/isNullEmpty.m",
+ fpath29: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+refblas/xaxpy.m",
+ fpath30: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/BLASApi.m",
+ fpath31: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/int.m",
+ fpath32: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+blas/size_ptr.m",
+ fpath33: "C:/Program Files/MATLAB/R2016a/toolbox/coder/coder/+coder/+internal/c_cast.p",
+ fpath34: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+scalar/fix.m",
+ fpath35: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elfun/fix.m",
+ fpath36: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/scalexpAllocNoCheck.m",
+ fpath37: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/scalexpAlloc.m",
+ fpath38: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/minOrMax.m",
+ fpath39: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/max.m",
+ fpath40: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/lang/validatestring.m",
+ fpath41: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/isrow.m",
+ fpath42: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/isinf.m",
+ fpath43: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/isIntScalar.m",
+ fpath44: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/isPosIntScalar.m",
+ fpath45: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/toLower.m",
+ fpath46: "C:/Program Files/MATLAB/R2016a/toolbox/images/images/eml/fspecial.m",
+ fpath47: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/useParforConst.m",
+ fpath48: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/ops/power.m",
+ fpath49: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/applyScalarFunction.m",
+ fpath50: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/isnan.m",
+ fpath51: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/error.m",
+ fpath52: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/ops/eml_mtimes_helper.m",
+ fpath53: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/ismatrix.m",
+ fpath54: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/ops/mpower.m",
+ fpath55: "C:/Program Files/MATLAB/R2016a/toolbox/matlab/images/+images/+internal/+coder/isCodegenForHost.m",
+ fpath56: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/lang/validateattributes.m",
+ fpath57: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/strfun/char.m",
+ fpath58: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/isfinite.m",
+ fpath59: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/constNonSingletonDim.m",
+ fpath60: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/private/process_sumprod_inputs.m",
+ fpath61: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/private/eml_isequal_core.m",
+ fpath62: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/isequal.m",
+ fpath63: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/private/combine_vector_elements.m",
+ fpath64: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/private/sumprod.m",
+ fpath65: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/datafun/sum.m",
+ fpath66: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/sparfun/issparse.m",
+ fpath67: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/scalexpCompatible.m",
+ fpath68: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/div.m",
+ fpath69: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/ops/rdivide.m",
+ fpath70: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/ops/mrdivide.p",
+ fpath71: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/indexShapeCheck.m",
+ fpath72: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/find.m",
+ fpath73: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/+scalar/abs.m",
+ fpath74: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elfun/abs.m",
+ fpath75: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/relop.m",
+ fpath76: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/iscolumn.m",
+ fpath77: "C:/Program Files/MATLAB/R2016a/toolbox/images/images/eml/padarray.m",
+ fpath78: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/assertValidSizeArg.m",
+ fpath79: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/isIntegerClass.m",
+ fpath80: "C:/Program Files/MATLAB/R2016a/toolbox/shared/coder/coder/+coder/+internal/indexIntRelop.m",
+ fpath81: "C:/Program Files/MATLAB/R2016a/toolbox/eml/eml/+coder/+internal/floatModel.m",
+ fpath82: "C:/Program Files/MATLAB/R2016a/toolbox/eml/lib/matlab/elmat/repmat.m",
+ fpath83: "C:/Program Files/MATLAB/R2016a/toolbox/matlab/images/+images/+internal/+coder/getCtype.m",
+ fpath84: "C:/Program Files/MATLAB/R2016a/toolbox/images/images/+images/+internal/+coder/+buildable/Ordfilt2Buildable.m",
+ fpath85: "C:/Program Files/MATLAB/R2016a/toolbox/images/images/eml/ordfilt2.m"
+};
+</script>
+</head>
+<body>
+
+<div class="west">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="MATLABcode"><span>MATLAB code</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="callstack"><span>Call stack</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="ccode"><span>C code</span></span></li>
+</ul>
+<div id="MATLABcodebody" class="ui-tabs-panel">
+<!-- Begin Filter -->
+<div class="grayline methodset" onclick="filterClick(event);">
+<a class="collapsed">Filter</a>
+</div>
+<div id="filterbody" class="hidden">
+<table class="myfunc-filter-tbl">
+<tr>
+<td title="Use this filter to display only functions and methods that contain variables or expressions with the specified attributes." colspan="2" class="checkbox">
+<div class="myfunc-filterby-chk"><input type="checkbox" class="filterenable" />
+<div class="filter-enable-lbl">Filter functions and methods</div></div></td></tr><tr>
+<td class="label"><div class="myfunc-filterby-lbl">Filter by:</div></td>
+<td class="select">
+<div class="filters">
+<select class="myfunc-filterby">
+<option id="size">Size</option>
+<option id="complex">Complexity</option>
+<option id="class">Class</option>
+</select>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="label"><div class="myfunc-filterstr-lbl">Filter:</div></td>
+<td class="input"><div>
+
+<div class="size">
+<select class="myfunc-filter size">
+<option value="1">1 x 1</option>
+<option value="1">12 x 12</option>
+<option value="1">3 x 3</option>
+<option value="1"><b>:</b>? x 1</option>
+<option value="1"><b>:</b>? x <b>:</b>?</option>
+</select>
+</div>
+
+<div class="complex">
+<select class="myfunc-filter complex">
+<option value="">Complex values</option>
+<option value="1">Real values</option>
+</select>
+</div>
+<!-- Begin Class Filter -->
+<div class="class">
+<select class="myfunc-filter class">
+<option value="1">double</option>
+<option value="1">logical</option>
+</select>
+</div>
+<!-- End Class Filter -->
+</div>
+</td>
+</tr>
+</table>
+<div class="myfunc-count"></div>
+</div>
+<!-- End Filter -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionSetClick(event);">
+<a class="expanded">Functions</a>
+</div>
+<!-- Begin Function Tree -->
+<div id="functiontreebody">
+<div class="functionwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionTreeClick(event);">
+<ol class="tree">
+<!-- Begin Function Tree Roots -->
+<li class="leaf  passed"><a href="#" class="fcn " id="F1N3:F1">detectCorner</a></li>
+<!-- End Function Tree Roots -->
+</ol>
+<!-- Function Tree Nodes -->
+<div class="functiontreenodes hidden">
+</div>
+<!-- End Function Tree Nodes -->
+</div>
+</div>
+<!-- End Function Tree -->
+<!-- Begin Class Tree -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="methodSetClick(event);">
+<a class="expanded">Classes</a>
+</div>
+<div id="classlistbody">
+<div class="classwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="classTreeClick(event);">
+<ol class="tree">
+<!-- Begin Class Tree Roots -->
+<!-- End Class Tree Roots -->
+</ol>
+<!-- Class Tree Nodes -->
+<div class="classlistnodes hidden">
+</div>
+</div>
+</div>
+<!-- End Class Tree -->
+</div>
+<!-- Begin Call Tree -->
+<div id="callstackbody" class="ui-tabs-panel hidden">
+<div class="treewrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="callTreeClick(event);">
+<ol class="tree">
+<!-- Call Tree Root -->
+<li class="leaf passed"><a href="#" class="fcn " id="F1N3:L1">detectCorner</a>
+</li>
+</ol>
+<!-- Call Tree Nodes -->
+<div class="callstacknodes hidden">
+<ol class="callstacknode" id="callstacknode1">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F1N3:l1">detectCorner</a>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!-- End Call Tree -->
+<!-- Begin C Code -->
+<div id="ccodebody" class="ui-tabs-panel hidden">
+<div class="grayline methodset" onclick="ccodeClick(event,1);">
+<a class="expanded">Target Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody1" class="visible">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="abs_cpp.html"><td class="ccode"><a href="#">abs.cpp</a></td></tr>
+<tr class="ccode" id="abs_h.html"><td class="ccode"><a href="#">abs.h</a></td></tr>
+<tr class="ccode" id="conv2_cpp.html"><td class="ccode"><a href="#">conv2.cpp</a></td></tr>
+<tr class="ccode" id="conv2_h.html"><td class="ccode"><a href="#">conv2.h</a></td></tr>
+<tr class="ccode" id="detectCorner_cpp.html"><td class="ccode"><a href="#">detectCorner.cpp</a></td></tr>
+<tr class="ccode" id="detectCorner_h.html"><td class="ccode"><a href="#">detectCorner.h</a></td></tr>
+<tr class="ccode" id="detectCorner_data_cpp.html"><td class="ccode"><a href="#">detectCorner_data.cpp</a></td></tr>
+<tr class="ccode" id="detectCorner_data_h.html"><td class="ccode"><a href="#">detectCorner_data.h</a></td></tr>
+<tr class="ccode" id="detectCorner_emxutil_cpp.html"><td class="ccode"><a href="#">detectCorner_emxutil.cpp</a></td></tr>
+<tr class="ccode" id="detectCorner_emxutil_h.html"><td class="ccode"><a href="#">detectCorner_emxutil.h</a></td></tr>
+<tr class="ccode" id="detectCorner_initialize_cpp.html"><td class="ccode"><a href="#">detectCorner_initialize.cpp</a></td></tr>
+<tr class="ccode" id="detectCorner_initialize_h.html"><td class="ccode"><a href="#">detectCorner_initialize.h</a></td></tr>
+<tr class="ccode" id="detectCorner_mexutil_cpp.html"><td class="ccode"><a href="#">detectCorner_mexutil.cpp</a></td></tr>
+<tr class="ccode" id="detectCorner_mexutil_h.html"><td class="ccode"><a href="#">detectCorner_mexutil.h</a></td></tr>
+<tr class="ccode" id="detectCorner_terminate_cpp.html"><td class="ccode"><a href="#">detectCorner_terminate.cpp</a></td></tr>
+<tr class="ccode" id="detectCorner_terminate_h.html"><td class="ccode"><a href="#">detectCorner_terminate.h</a></td></tr>
+<tr class="ccode" id="detectCorner_types_h.html"><td class="ccode"><a href="#">detectCorner_types.h</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_cpp.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.cpp</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_h.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.h</a></td></tr>
+<tr class="ccode" id="indexShapeCheck_cpp.html"><td class="ccode"><a href="#">indexShapeCheck.cpp</a></td></tr>
+<tr class="ccode" id="indexShapeCheck_h.html"><td class="ccode"><a href="#">indexShapeCheck.h</a></td></tr>
+<tr class="ccode" id="ordfilt2_cpp.html"><td class="ccode"><a href="#">ordfilt2.cpp</a></td></tr>
+<tr class="ccode" id="ordfilt2_h.html"><td class="ccode"><a href="#">ordfilt2.h</a></td></tr>
+<tr class="ccode" id="padarray_cpp.html"><td class="ccode"><a href="#">padarray.cpp</a></td></tr>
+<tr class="ccode" id="padarray_h.html"><td class="ccode"><a href="#">padarray.h</a></td></tr>
+<tr class="ccode" id="power_cpp.html"><td class="ccode"><a href="#">power.cpp</a></td></tr>
+<tr class="ccode" id="power_h.html"><td class="ccode"><a href="#">power.h</a></td></tr>
+<tr class="ccode" id="rt_nonfinite_h.html"><td class="ccode"><a href="#">rt_nonfinite.h</a></td></tr>
+<tr class="ccode" id="rtwtypes_h.html"><td class="ccode"><a href="#">rtwtypes.h</a></td></tr>
+<tr class="ccode" id="scalexpAlloc_cpp.html"><td class="ccode"><a href="#">scalexpAlloc.cpp</a></td></tr>
+<tr class="ccode" id="scalexpAlloc_h.html"><td class="ccode"><a href="#">scalexpAlloc.h</a></td></tr>
+<tr class="ccode" id="xaxpy_cpp.html"><td class="ccode"><a href="#">xaxpy.cpp</a></td></tr>
+<tr class="ccode" id="xaxpy_h.html"><td class="ccode"><a href="#">xaxpy.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+<div class="grayline methodset" onclick="ccodeClick(event,3);">
+<a class="collapsed">Interface Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody3" class="hidden">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="_coder_detectCorner_api_cpp.html"><td class="ccode"><a href="#">_coder_detectCorner_api.cpp</a></td></tr>
+<tr class="ccode" id="_coder_detectCorner_api_h.html"><td class="ccode"><a href="#">_coder_detectCorner_api.h</a></td></tr>
+<tr class="ccode" id="_coder_detectCorner_info_cpp.html"><td class="ccode"><a href="#">_coder_detectCorner_info.cpp</a></td></tr>
+<tr class="ccode" id="_coder_detectCorner_info_h.html"><td class="ccode"><a href="#">_coder_detectCorner_info.h</a></td></tr>
+<tr class="ccode" id="_coder_detectCorner_mex_cpp.html"><td class="ccode"><a href="#">_coder_detectCorner_mex.cpp</a></td></tr>
+<tr class="ccode" id="_coder_detectCorner_mex_h.html"><td class="ccode"><a href="#">_coder_detectCorner_mex.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+</div>
+<!-- End C Code -->
+</div>
+<!-- Tooltips -->
+<div class="aux hidden">
+<div class="tooltips">
+<div class="tooltip" id="TT1"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT2"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT3"><table class="tooltip"><tr><th>Size</th><td>3 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT4"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT5"><table class="tooltip"><tr><th>Size</th><td>12 x 12</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT6"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT7"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT8"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT9"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT10"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT11"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT12"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT13"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT14"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT15"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT16"><table class="tooltip"><tr><th>Size</th><td>1 x 23</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT17"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT18"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT19"><table class="tooltip"><tr><th>Size</th><td>1 x 7</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT20"><table class="tooltip"><tr><th>Size</th><td>1 x 12</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT21"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT22"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT23"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>coder.opaque</td></tr></table></div>
+<div class="tooltip" id="TT24"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT25"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT26"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT27"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT28"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT29"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT30"><table class="tooltip"><tr><th>Size</th><td>1 x 8</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT31"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT32"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT33"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT34"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT35"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT36"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT37"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT38"><table class="tooltip"><tr><th>Size</th><td>1 x 14</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT39"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>mxArray</td></tr></table></div>
+<div class="tooltip" id="TT40"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT41"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT42"><table class="tooltip"><tr><th>Size</th><td>1 x 31</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT43"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT44"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT45"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT46"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT47"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT48"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT49"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT50"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT51"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT52"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT53"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT54"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT55"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT56"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT57"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT58"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT59"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT60"><table class="tooltip"><tr><th>Size</th><td>20 x 20</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT61"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT62"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT63"><table class="tooltip"><tr><th>Size</th><td>400 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT64"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT65"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT66"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT67"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT68"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT69"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT70"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT71"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT72"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT73"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT74"><table class="tooltip"><tr><th>Size</th><td>20 x 20</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT75"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT76"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT77"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT78"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT79"><table class="tooltip"><tr><th>Size</th><td><b>:</b>400 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT80"><table class="tooltip"><tr><th>Size</th><td>400 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT81"><table class="tooltip"><tr><th>Size</th><td><b>:</b>400 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT82"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>400</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT83"><table class="tooltip"><tr><th>Size</th><td><b>:</b>400 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT84"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT85"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT86"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT87"><table class="tooltip"><tr><th>Size</th><td>1 x 11</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT88"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT89"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT90"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT91"><table class="tooltip"><tr><th>Size</th><td>1 x 30</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT92"><table class="tooltip"><tr><th>Size</th><td>1 x 24</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT93"><table class="tooltip"><tr><th>Size</th><td>1 x 48</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT94"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT95"><table class="tooltip"><tr><th>Size</th><td>1 x 35</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT96"><table class="tooltip"><tr><th>Size</th><td>1 x 19</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT97"><table class="tooltip"><tr><th>Size</th><td>1 x 52</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT98"><table class="tooltip"><tr><th>Size</th><td>1 x 15</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT99"><table class="tooltip"><tr><th>Size</th><td>1 x 55</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT100"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT101"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT102"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT103"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT104"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT105"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT106"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT107"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT108"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT109"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT110"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT111"><table class="tooltip"><tr><th>Size</th><td><b>:</b>400 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT112"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT113"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT114"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+</div>
+</div>
+<!-- End Tooltips -->
+
+<div class="south">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="summary"><span>Summary</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="messages"><span>All Messages (0)</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="watchlist"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item hidden"><span class="tab-link" id="watchload"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="buildlog1"><span>Target Build Log</span></span></li>
+</ul>
+
+<!-- Compilation Summary -->
+<div id="summarybody" class="ui-tabs-panel">
+<table cellpadding="1" cellspacing="4">
+<tr><td>C source code generated on:</td><td>15-Aug-2017 07:37:18</td></tr>
+<tr><td>Coding target:</td><td>C MEX Function</td></tr>
+<tr><td>Number of errors:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of warnings:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of notices:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+</table>
+<p/><p/><table>
+<tr><td><b>Tell Us What You Think</b></td></tr>
+<tr><td>We value your feedback. Please take a few minutes to answer this short questionnaire regarding the Code Generation Report.</td></tr>
+<tr><td><a href="matlab: web('http://www.customersat3.com/TakeSurvey.asp?si=ELu7GTnTYtk%3D','-browser');">&gt;&gt;Provide Feedback</a></td></tr>
+</table>
+</div>
+
+<!-- Message Table -->
+<div id="messagesbody" class="ui-tabs-panel hidden">
+<div>
+<div class="msgsuccess">Code generation successful. Click here to <a href="javaScript:selectSummaryTab();">view summary</a>.</div>
+</div>
+</div>
+<!-- Watchlist Table -->
+<div id="watchlistbody" class="ui-tabs-panel hidden">
+</div>
+<div id="watchloadbody" class="ui-tabs-panel hidden">
+Loading Variables table ...
+</div>
+
+<!-- Target Build Log -->
+<div id="buildlog1body" class="ui-tabs-panel hidden">
+<div class="grayline"></div>
+<table cellpadding="4" cellspacing="1"><tr>
+<td align="left" class="td-linebottomrt-gray" colspan="2">Build Parameters</td>
+</tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Build directory</td>
+<td align="left" valign="top" class="td-linebottomrt-link"><a href="matlab: cd('C:\Users\Oluwole_Jnr\Desktop\University of Leeds\Main Project\Project_MATLab\MatConvNet - Optimized\codegen\mex\detectCorner')">C:\Users\Oluwole_Jnr\Desktop\University of Leeds\Main Project\Project_MATLab\MatConvNet - Optimized\codegen\mex\detectCorner</a></td></tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Make wrapper</td>
+<td align="left" valign="top" class="td-linebottomrt-link">detectCorner_mex.bat</td></tr>
+</table>
+<br/>
+<table border="1" cellpadding="4" cellspacing="1" width="100%">
+<tr><td align="left" class="td-linebottomrt-gray">Build Log</td></tr>
+<tr><td valign="top" class="td-script">
+<pre>
+<span class="td-line-number">    1   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "detectCorner_mexutil.cpp"</span>
+<span class="td-line-number">    2   </span><span class="td-line-normal">detectCorner_mexutil.cpp</span>
+<span class="td-line-number">    3   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "detectCorner_data.cpp"</span>
+<span class="td-line-number">    4   </span><span class="td-line-normal">detectCorner_data.cpp</span>
+<span class="td-line-number">    5   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "detectCorner_initialize.cpp"</span>
+<span class="td-line-number">    6   </span><span class="td-line-normal">detectCorner_initialize.cpp</span>
+<span class="td-line-number">    7   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "detectCorner_terminate.cpp"</span>
+<span class="td-line-number">    8   </span><span class="td-line-normal">detectCorner_terminate.cpp</span>
+<span class="td-line-number">    9   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "detectCorner.cpp"</span>
+<span class="td-line-number">   10   </span><span class="td-line-normal">detectCorner.cpp</span>
+<span class="td-line-number">   11   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "conv2.cpp"</span>
+<span class="td-line-number">   12   </span><span class="td-line-normal">conv2.cpp</span>
+<span class="td-line-number">   13   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "eml_int_forloop_overflow_check.cpp"</span>
+<span class="td-line-number">   14   </span><span class="td-line-normal">eml_int_forloop_overflow_check.cpp</span>
+<span class="td-line-number">   15   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "xaxpy.cpp"</span>
+<span class="td-line-number">   16   </span><span class="td-line-normal">xaxpy.cpp</span>
+<span class="td-line-number">   17   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "scalexpAlloc.cpp"</span>
+<span class="td-line-number">   18   </span><span class="td-line-normal">scalexpAlloc.cpp</span>
+<span class="td-line-number">   19   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "power.cpp"</span>
+<span class="td-line-number">   20   </span><span class="td-line-normal">power.cpp</span>
+<span class="td-line-number">   21   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "ordfilt2.cpp"</span>
+<span class="td-line-number">   22   </span><span class="td-line-normal">ordfilt2.cpp</span>
+<span class="td-line-number">   23   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "indexShapeCheck.cpp"</span>
+<span class="td-line-number">   24   </span><span class="td-line-normal">indexShapeCheck.cpp</span>
+<span class="td-line-number">   25   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "abs.cpp"</span>
+<span class="td-line-number">   26   </span><span class="td-line-normal">abs.cpp</span>
+<span class="td-line-number">   27   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "padarray.cpp"</span>
+<span class="td-line-number">   28   </span><span class="td-line-normal">padarray.cpp</span>
+<span class="td-line-number">   29   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "interface/_coder_detectCorner_info.cpp"</span>
+<span class="td-line-number">   30   </span><span class="td-line-normal">_coder_detectCorner_info.cpp</span>
+<span class="td-line-number">   31   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "interface/_coder_detectCorner_api.cpp"</span>
+<span class="td-line-number">   32   </span><span class="td-line-normal">_coder_detectCorner_api.cpp</span>
+<span class="td-line-number">   33   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "interface/_coder_detectCorner_mex.cpp"</span>
+<span class="td-line-number">   34   </span><span class="td-line-normal">_coder_detectCorner_mex.cpp</span>
+<span class="td-line-number">   35   </span><span class="td-line-normal">cl  /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE -I"C:\Program Files\MATLAB\R2016a\extern\include" -I"C:\Program Files\MATLAB\R2016a\simulink\include" /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0  /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /openmp  /O2 /Oy- /DNDEBUG  /fp:strict  /I "C:\PROGRA~1\MATLAB\R2016a\simulink\include" /I "C:\PROGRA~1\MATLAB\R2016a\toolbox\shared\simtargets" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2" /I "C:\Users\OLUWOL~1\Desktop\UNIVER~1\MAINPR~1\PROJEC~1\MATCON~2\codegen\mex\detectCorner" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2016a\extern\include" /I "." "detectCorner_emxutil.cpp"</span>
+<span class="td-line-number">   36   </span><span class="td-line-normal">detectCorner_emxutil.cpp</span>
+<span class="td-line-number">   37   </span><span class="td-line-normal">link  /nologo /manifest /DLL /LIBPATH:"C:\Program Files\MATLAB\R2016a\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /EXPORT:mexFunction /NODEFAULTLIB:LIBCMT  /nodefaultlib:vcomp /LIBPATH:"C:\PROGRA~1\MATLAB\R2016a\bin\win64"  /OUT:detectCorner_mex.mexw64 /LIBPATH:"C:\PROGRA~1\MATLAB\R2016a\extern\lib\win64\microsoft" detectCorner_mexutil.obj detectCorner_data.obj detectCorner_initialize.obj detectCorner_terminate.obj detectCorner.obj conv2.obj eml_int_forloop_overflow_check.obj xaxpy.obj scalexpAlloc.obj power.obj ordfilt2.obj indexShapeCheck.obj abs.obj padarray.obj _coder_detectCorner_info.obj _coder_detectCorner_api.obj _coder_detectCorner_mex.obj detectCorner_emxutil.obj  "C:\PROGRA~1\MATLAB\R2016a\extern\lib\win64\microsoft\libmwordfilt2.lib"  libmwblas.lib  @detectCorner_mex_mex.arf</span>
+<span class="td-line-number">   38   </span><span class="td-line-normal">   Creating library detectCorner_mex.lib and object detectCorner_mex.exp</span>
+<span class="td-line-number">   39   </span><span class="td-line-normal">Build completed using compiler msvc100</span>
+<span class="td-line-number">   40   </span><span class="td-line-normal">mt -outputresource:"detectCorner_mex.mexw64;2" -manifest "detectCorner_mex.mexw64.manifest"</span>
+<span class="td-line-number">   41   </span><span class="td-line-normal">Microsoft (R) Manifest Tool version 5.2.3790.2076</span>
+<span class="td-line-number">   42   </span><span class="td-line-normal">Copyright (c) Microsoft Corporation 2005. </span>
+<span class="td-line-number">   43   </span><span class="td-line-normal">All rights reserved.</span>
+</pre>
+</td></tr></table>
+
+</div>
+</div>
+<!-- Begin MATLAB Code Panel -->
+<div class="center">
+<div class="center-title">
+<div class="ui-tabs-nav-item ui-tabs-selected">
+<span class="functiontitle">
+</span>
+<!-- Begin Call Sites -->
+<span id="callsiteselecttable" class="call-sites-tbl">
+<span id="callsiteselectlabel" class="filtered">Calls:</span>
+<select id="callsiteselect" onchange="callSiteChange(event)">
+<option value="callsiteprompt">Select a function call:</option>
+</select>
+</span>
+<!-- End Call Sites -->
+</div>
+</div>
+<div class="ui-tabs-panel">
+<div class="code" onmouseover="mcodeMouseOver(event);" onmouseout="mcodeMouseOut(event);"onclick="mcodeClick(event);">
+</div>
+</div>
+</div>
+<!-- End MATLAB Code Panel -->
+</body>
+</html>
