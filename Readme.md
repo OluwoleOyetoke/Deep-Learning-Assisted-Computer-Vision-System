@@ -14,6 +14,8 @@ Juxtaposing the computer’s strengths and weaknesses against the human brain’
 
 In summary, this project seeks to explore the science behind Neural Networks (NN), its various flavours (especially CNNs), application areas and then finally, narrow down by applying it in the design and development of a computer vision system which can be used for traffic sign recognition and detection in autonomous vehicles.
 
+![Project Milestones](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/Project%20Milestone.PNG)
+
 ## Repository Info
 
 1. This repository purely contains the project documentation and codes. Large supplementing files such as the:
@@ -47,6 +49,7 @@ Make sure that all of this resources are well references/linked before you run a
 ### Download Links
 Test Images: Included in 'Training Dependencies Folder'.
 IMDB File (32x32), Trained Convnet (227x227), TestVideoClips: [Here](https://drive.google.com/file/d/0B8Xt2Y8rsj5FZ2g1ZVZyXzh0TUU/view?usp=sharing)
+Project Documentation: For more insight, the project's documentation can be downloaded from [here](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Final_Documentation_(MSc%20Thesis).pdf)
 
 ## Functions Breakdown
 The list below gives a short explanation on each of the function.
