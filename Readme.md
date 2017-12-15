@@ -32,20 +32,20 @@ The diagrams below show the results of the performance analysis and testing carr
 '''
 <p><center>
 	
-<img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-	System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="left" alt="Error Graph During Training" />
+<img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="left" alt="Error Graph During Training" />
 
 <img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png" align="right" alt="Sample Classification" />
 
 </center></p>
-
-<p><b><i><center>
+<hr />
+<p style="text-align:center"><b><i><center>
 	Figure Showing Error Descent During 58 Epochs of Training (left) and Sample Classification Result After Training (right)
 </center></i></b></p>
 
 <p><center>
 	<img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG" align="center" style="max-width: 100%" alt="Improvememnt Bar Graph Per Epoc"/></center></p>
-	
-<p><b><i><center>Figure Showing Improvememnt Bar Graph Per EpochError During Training</center></i></b></p>
+<hr />
+<p style="text-align:center"><b><i><center>Figure Showing Improvememnt Bar Graph Per EpochError During Training</center></i></b></p>
 '''
 
 
