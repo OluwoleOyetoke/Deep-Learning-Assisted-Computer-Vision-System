@@ -152,4 +152,5 @@ This project is free for use and to be contributed to
 * Well wishers
 * Supervisor
 * All the nice people who published helpful and easy to grasp journal articles in this area of study
+* Most importantly, **future contributors to this project**
 
