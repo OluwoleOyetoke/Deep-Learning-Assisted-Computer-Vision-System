@@ -55,6 +55,7 @@ The key optimization schemes used in the improvement of the performance of this 
 4. Heterogeneous Computing
 
 ![Improvement in Speed (Post Optimization)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img17.PNG)
+
 **Figure Showing Speed Improvement After Some Form of Optimization**
 
 
@@ -67,7 +68,8 @@ By engaging different methods of optimization (software/hardware) we can improve
 3. Optimization of the detection algorithms performance from about half a frame per second to around 25 to 30 frames per second (classification operation included). This sums up to over 50 time’s improvement in speed (C/C++ version).
 4. Practically proving the fact that further improvement in speed can be achieved through heterogeneous computing. i.e., by dedicating some parts of the computationally expensive detection functions to suitable devices such as GPUs and FPGA.
 
-![Final Example](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img16.PNG)
+![Final Example](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img16.JPG)
+
 **Figure Showing Vision System in Operation**
 
 ## Repository Info
