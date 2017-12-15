@@ -35,6 +35,12 @@ The diagrams below show the results of the performance analysis and testing carr
 <img src="https://tinyurl.com/y7aukwme" align="right" style="max-width: 50%" /></center></p>
 <p><center><img src="https://tinyurl.com/yaxbevne" align="center" style="max-width: 100%" /></center></p>
 
+
+<p>
+<center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="left" style="max-width: 50%" />
+<img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png" align="right" style="max-width: 50%" /></center></p>
+<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG" align="center" style="max-width: 100%" /></center></p>
+
 '''
 
 
