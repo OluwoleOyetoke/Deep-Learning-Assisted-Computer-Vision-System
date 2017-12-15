@@ -35,7 +35,7 @@ The diagrams below show the results of the performance analysis and testing carr
 
 ![Improvememnt Bar Graph Per Epoch](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG)
 
-**Figure Showing Improvememnt Bar Graph Per EpochError During Training**
+**Figure Showing Improvememnt Bar Graph Per Epoch During Training**
 
 As at Epoch 58, the achieved accuracy level was 98.464. Continuing the training a few more epochs down the line will result in accuracy levels above 99%
 
@@ -44,7 +44,8 @@ As at Epoch 58, the achieved accuracy level was 98.464. Continuing the training 
 The images below show the integration plan for the system (detection/classification) as well as the different schemes used for the traffic sign detection (harris corner detection, sobel edge filtering, hough line/circular transforms, connected component analysis etc.)
 ![Detection and Classification Integration](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img8.PNG)
 **Figure Showing Detection and Classification Integration Methodology**
-For more details, [read documentation chapter 5.0](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Final_Documentation_(MSc%20Thesis).pdf)
+
+For more details, read [Project Documentation (Chapter 5.0)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Final_Documentation_(MSc%20Thesis).pdf)
 
 ### Optimization
 The key optimization schemes used in the improvement of the performance of this system include:
@@ -53,8 +54,10 @@ The key optimization schemes used in the improvement of the performance of this 
 3. MATLAB Parallel Computing
 4. Heterogeneous Computing
 
-![Improvement in Speed (Post Optimization)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img8.PNG)
+![Improvement in Speed (Post Optimization)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img17.PNG)
 **Figure Showing Speed Improvement After Some Form of Optimization**
+
+
 
 ### Results
 By engaging different methods of optimization (software/hardware) we can improve the speed of action of Neural Network computational expensive operations, as in this project, I was able to push my computer vision system's performance from about 1.5 seconds per frame (i.e. about half a frame per second) to between 25 to 30 frames per seconds using my C/C++ solution running across multiple cores. The pure MATLAB solution optimized through vectorization and multi core dispatch gives a maximum of just about 8 frames per second which is also way ahead of the un-optimized MATLAB version of the vision system. In a nutshell, the results achieved by this project are as listed below
@@ -64,7 +67,7 @@ By engaging different methods of optimization (software/hardware) we can improve
 3. Optimization of the detection algorithms performance from about half a frame per second to around 25 to 30 frames per second (classification operation included). This sums up to over 50 time’s improvement in speed (C/C++ version).
 4. Practically proving the fact that further improvement in speed can be achieved through heterogeneous computing. i.e., by dedicating some parts of the computationally expensive detection functions to suitable devices such as GPUs and FPGA.
 
-![Final Example)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img16.PNG)
+![Final Example](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img16.PNG)
 **Figure Showing Vision System in Operation**
 
 ## Repository Info
