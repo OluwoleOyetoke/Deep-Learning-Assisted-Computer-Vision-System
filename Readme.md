@@ -37,7 +37,7 @@ The diagrams below show the results of the performance analysis and testing carr
 <img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png" align="right" alt="Sample Classification" />
 
 </center></p>
-<hr />
+
 <p style="text-align:center"><b><i><center>
 	Figure Showing Error Descent During 58 Epochs of Training (left) and Sample Classification Result After Training (right)
 </center></i></b></p>
@@ -51,8 +51,8 @@ The diagrams below show the results of the performance analysis and testing carr
 
 
 
-![Error Graph During Training](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png) 
-![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png)
+![Error Graph During Training](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png) ![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png)
+->**Figure Showing Error Descent During 58 Epochs of Training (left) and Sample Classification Result After Training (right)**<-
 ![Improvememnt Bar Graph Per Epoch](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG)
 
 As at Epoch 58, the achieved accuracy level was 98.464. Continuing the training a few more epochs down the line will result in accuracy levels above 99%
