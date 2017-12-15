@@ -30,7 +30,7 @@ In order to develop a Convolutional Neural Network which is able to classify ima
 The diagrams below show the results of the performance analysis and testing carried out and the descent in error rate of the classifier/CNN over the course of the 58 epochs (rounds) of training. This took about 47 hours using over 39000 training images on a 16 Gigabyte RAM quad core processor. The images below show the descent in the error rate as training proceeded, a classification example,and a bar graph showing performance improvement as the training went progressed.
 
 
-![Error Graph During Training](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png) 
+TL;DR ![Error Graph During Training](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png) 
 ![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png) 
 ![Improvememnt Bar Graph Per Epoch](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG)
 
