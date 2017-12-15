@@ -16,19 +16,18 @@ In summary, this project seeks to explore the science behind Neural Networks (NN
 
 ![Project Milestones](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/Project%20Milestone.PNG)
 
-##Project Implementation and Results
-###IMDB Creation (Dataset)
+## Project Implementation and Results
+### IMDB Creation (Dataset)
 A dataset of traffic sign images from the German Traffic Sign Recognition Benchmark (GTSRB) website is compiled and used to create the image database (IMDB) used to train and test the deep neural network. The German Traffic Sign Benchmark is a multi-class, single-image classification challenge held at the International Joint Conference on Neural Networks (IJCNN) 2011. The dataset consists of over 39,000 images in total, grouped into 43 different road traffic symbols.
 
 Through a written IMDB creation script, the dataset is split into 70% training, 20% validation and 10% test sets of images which are used in the holistic training, validation and testing of the created AlexNet model. Validation images are used to test the performance of the network during the training process while the test images are reserved in this project to perform personal test on the network, post training. The validation set actually can be regarded as a part of training set, but it is usually used for parameter selection and to avoid overfitting. If a model is trained on a training set only, it is very likely to get close to 100% accuracy and over fit, thus get very poor performance on test set which have never been seen by the network before. The test-sets are only used to test the performance of a trained model and are the best means of detecting over fitting in the network.
 
-###CNN Training
+### CNN Training
 For this project, the AlexNet CNN model is used. The MatConvNet Toolbox is used to create, modify and train the AlexNet CNN model. MatConvNet includes a variety of layer models contained in its MATLAB library directory, such as convolution, deconvolution, max and average pooling, ReLU activation, sigmoid activation and many other pre-written functions. There are enough elements available to help implement many interesting state-of-the-art networks out of the box, or even import them from other toolboxes such as Caffe.
 After the creation of the AlexNet model, the network undergoes training and is then tested to ensure performance and accuracy. Considering the fact that two levels of operation is cascaded, one for the traffic sign (object) detection and the other for the actual classification of the traffic sign, it is important to note that this chapter only explains the development, training and testing of the image classifier. Detailed testing and verification is carried out to ensure optimal performance of the system.
 In order to develop a Convolutional Neural Network which is able to classify images fed into it, the network has to be trained over multiple epochs in a specialized manner. Batches of training images fed into the CNN first have to be pre-processed to the network’s standard input size and in most cases, normalized to have zero mean. This initiative affect the rate of convergence of the network during training to a great extent. It is important to remember that the convolutional layers of the network serve as the feature extractors while the fully connected layers and the softmax serve as the processing and classifier elements
 
 The diagrams below show the results of the performance analysis and testing carried out and the descent in error rate of the classifier/CNN over the course of the 58 epochs (rounds) of training. This took about 47 hours using over 39000 training images on a 16 Gigabyte RAM quad core processor. The images below show the descent in the error rate as training proceeded, a classification example,and a bar graph showing performance improvement as the training went progressed.
-
 
 ![Error Graph During Training](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png) ![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png)
 
@@ -41,9 +40,32 @@ The diagrams below show the results of the performance analysis and testing carr
 As at Epoch 58, the achieved accuracy level was 98.464. Continuing the training a few more epochs down the line will result in accuracy levels above 99%
 
 
-###Sign Detection & Integration
+### Sign Detection & Integration
+The images below show the integration plan for the system (detection/classification) as well as the different schemes used for the traffic sign detection (harris corner detection, sobel edge filtering, hough line/circular transforms, connected component analysis etc.)
+![Detection and Classification Integration](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img8.PNG)
+**Figure Showing Detection and Classification Integration Methodology**
+For more details, [read documentation chapter 5.0](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Final_Documentation_(MSc%20Thesis).pdf)
 
-###Optimization
+### Optimization
+The key optimization schemes used in the improvement of the performance of this system include:
+1. MATLAB Vectorization
+2. Use of C/C++/FORTRAN for some subroutines
+3. MATLAB Parallel Computing
+4. Heterogeneous Computing
+
+![Improvement in Speed (Post Optimization)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img8.PNG)
+**Figure Showing Speed Improvement After Some Form of Optimization**
+
+### Results
+By engaging different methods of optimization (software/hardware) we can improve the speed of action of Neural Network computational expensive operations, as in this project, I was able to push my computer vision system's performance from about 1.5 seconds per frame (i.e. about half a frame per second) to between 25 to 30 frames per seconds using my C/C++ solution running across multiple cores. The pure MATLAB solution optimized through vectorization and multi core dispatch gives a maximum of just about 8 frames per second which is also way ahead of the un-optimized MATLAB version of the vision system. In a nutshell, the results achieved by this project are as listed below
+
+1. Design and implementation of a deep leaning model (AlexNet) for traffic sign classification which attained a classification accuracy of over 98%.
+2. Design and implantation of multiple layers of traffic sign post detection mechanisms which attained a detection accuracy of over 99%.
+3. Optimization of the detection algorithms performance from about half a frame per second to around 25 to 30 frames per second (classification operation included). This sums up to over 50 time’s improvement in speed (C/C++ version).
+4. Practically proving the fact that further improvement in speed can be achieved through heterogeneous computing. i.e., by dedicating some parts of the computationally expensive detection functions to suitable devices such as GPUs and FPGA.
+
+![Final Example)](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img16.PNG)
+**Figure Showing Vision System in Operation**
 
 ## Repository Info
 
