@@ -33,8 +33,8 @@ The diagrams below show the results of the performance analysis and testing carr
 '''html
 <h1> Testing</h1>
 <p>
-	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rs_img5.png" align="left" style="max-width: 20px" /></center></p>
-	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rs_img5.png" align="right" style="max-width: 20px" /></center></p>
+	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="left" style="max-width: 20px" /></center></p>
+	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="right" style="max-width: 20px" /></center></p>
 	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG" align="center" style="max-width: 40px" /></center></p>
 </p>
 ![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img7.PNG) 
