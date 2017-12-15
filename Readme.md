@@ -33,9 +33,9 @@ The diagrams below show the results of the performance analysis and testing carr
 '''html
 <h1> Testing</h1>
 <p>
-		<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img5.PNG" align="left" style="max-width: 50%" /></center></p>
-		<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img7.PNG" align="right" style="max-width: 50%" /></center></p>
-		<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG" align="center" style="max-width: 100%" /></center></p>
+	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img5.PNG" align="left" style="max-width: 20%" /></center></p>
+	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img7.PNG" align="right" style="max-width: 20%" /></center></p>
+	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG" align="center" style="max-width: 100%" /></center></p>
 </p>
 ![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img7.PNG) 
 ![Improvememnt Bar Graph Per Epoch](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG)
