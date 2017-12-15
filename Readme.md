@@ -30,16 +30,10 @@ In order to develop a Convolutional Neural Network which is able to classify ima
 The diagrams below show the results of the performance analysis and testing carried out and the descent in error rate of the classifier/CNN over the course of the 58 epochs (rounds) of training. This took about 47 hours using over 39000 training images on a 16 Gigabyte RAM quad core processor. The images below show the descent in the error rate as training proceeded, a classification example,and a bar graph showing performance improvement as the training went progressed.
 
 
-'''html
-<h1> Testing</h1>
-<p>
-	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="left" style="max-width: 20px" /></center></p>
-	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png" align="right" style="max-width: 20px" /></center></p>
-	<p><center><img src="https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG" align="center" style="max-width: 40px" /></center></p>
-</p>
-![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img7.PNG) 
+![Error Graph During Training](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img5.png) 
+![Sample Classification](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/rsz_img7.png) 
 ![Improvememnt Bar Graph Per Epoch](https://github.com/OluwoleOyetoke/Deep-Learning-Assisted-Computer-Vision-System/blob/master/Project%20Documentation/Img/img6.PNG)
-'''
+
 As at Epoch 58, the achieved accuracy level was 98.464. Continuing the training a few more epochs down the line will result in accuracy levels above 99%
 
 
